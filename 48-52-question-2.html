@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#more {display: none;}
+</style>
+</head>
+<body>
+
+<h2>Content Area </h2>
+<p>What We Do
+    We create and deliver custom meals for your body types to help you reach your goals.
+    
+    The nutritionist assigned to you understands your lifestyle and charts out a course for you and decides whether you have to follow the ketogenic diet, high protein low carb diet or the balanced diet.<span id="dots">...</span><span id="more">This is then communicated to the culinary team, who prepare calorie counted, macro counted meals specifically for you.
+
+        We deliver 4 meals a day, ensuring that the meals are fresh and delivered at a location convenient to you.
+        
+        Your personal nutritionist acts like your mentor, follows up on a regular basis maps your progress and tweaks and tailors your diet, shifting you between various diets (ketogenic, low carb high protein, balanced)</span></p>
+<button onclick="myFunction()" id="myBtn">Read more</button>
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 5</title>
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 90vw;
+  height: 100vh;
+  margin: auto;
+}
+.container div.row {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container div.row div.box {
+  width: 250px;
+  height: 250px;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.container div.row div.box div.textArea {
+  background-color: #f1f1f1;
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container div.row div.box div.textArea h1 {
+  margin: 0;
+  padding: 0;
+}
+.container div.row div.box div.button-wrapper {
+  flex-grow: 2;
+  display: flex;
+  justify-content: flex-stretch;
+}
+.container div.row div.box div.button-wrapper div {
+  flex-grow: 1;
+  position: relative;
+}
+.container div.row div.box div.button-wrapper div:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+.container div.row div.box div.button-wrapper div:hover {
+  cursor: pointer;
+}
+.container div.row div.box div.button-wrapper #box-1 {
+  background-color: yellowgreen;
+}
+.container div.row div.box div.button-wrapper #box-2 {
+  background-color: blue;
+}
+.container div.row div.box div.button-wrapper #box-3 {
+  background-color: orange;
+}
+</style>
+<body>
+    <body>
+        <div class="container">
+          <div class="row">
+            <div class="box">
+              <div class="textArea">
+                <h1 id="count">6</h1>
+              </div>
+              <div class="button-wrapper">
+                <div id="box-1">PLUS</div>
+                <div id="box-2">RESET</div>
+                <div id="box-3">MINUS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+</body>
+<script src="38-42-2.js"></script>
+</html>

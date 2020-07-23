@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head><style>
+   
+   { box-sizing:border-box; }
+
+/* basic stylings ------------------------------------------ */
+ 
+.container 		{ 
+  font-family:'Roboto';
+  width:600px; 
+  margin:30px auto 0; 
+  display:block; 
+  background:#FFF;
+  padding:10px 50px 50px;
+  
+}
+h2 		 { 
+  text-align:center; 
+  margin-bottom:50px; 
+}
+h2 small { 
+  font-weight:normal; 
+  color:#888; 
+  display:block; 
+}
+.footer 	{ text-align:center; }
+.footer a  { color:#53B2C8; }
+
+/* form starting stylings ------------------------------- */
+.group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+#btn{
+    background-color:greenyellow;
+    width: 200px;
+    margin-left: 60px;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+.frm{
+    margin-top: 50px;
+    margin-left: 400px;
+    border-top: 5px solid black;
+    padding: 10px;
+    border-bottom: 5px solid black;
+    border-style: dotted;
+    max-width: 340px;
+    padding-left: 50px;
+    margin-right: 400px;
+    border-left: greenyellow 5px solid;
+    
+    border-right: greenyellow 5px solid;
+
+
+}
+    </style>
+
+<title>Form Example</title>
+<script LANGUAGE="JavaScript" type="text/javascript">
+function display() {
+  DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=500,height=500')
+  message = "<ul><li><b>NAME: </b>" + document.form1.yourname.value;
+ message += "<ul><li><b> LAST NAME: </b>" + document.form1.last.value;
+  message += "<li><b>ADDRESS: </b>" + document.form1.address.value;
+  message += "<li><b>PHONE: </b>" + document.form1.phone.value + "</ul>";
+  DispWin.document.write(message);
+}
+</script>
+</head>
+<body>
+
+<div class="frm">
+<form name="form1">
+<p><b>Name:</b> <input TYPE="TEXT" SIZE="30" NAME="yourname">
+</p>
+<p><b>Last Name:</b> <input TYPE="TEXT" SIZE="30" NAME="last">
+</p>
+<p><b>Address:</b> <input TYPE="TEXT" SIZE="30" NAME="address">
+</p>
+<p><b>Phone: </b> <input TYPE="TEXT" SIZE="30" NAME="phone">
+</p>
+
+<p><input TYPE="BUTTON" VALUE="SHOW" onClick="display();" id = "btn"></p>
+</form>
+</div>
+</body>
+</html>
